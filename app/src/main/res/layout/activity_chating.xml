@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/chat_App"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/chating_back_btn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/baseline_arrow_back_24"/>
+
+          <ImageView
+              android:id="@+id/friend_profile_image"
+              android:layout_width="32dp"
+              android:layout_height="32dp"/>
+            
+            <TextView
+                android:id="@+id/friend_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UserName"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:textColor="@android:color/white" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Message_List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/chat_App"
+
+        android:layout_above="@id/chat_linear_layout"/>
+
+    <LinearLayout
+        android:id="@+id/chat_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:id="@+id/send_msg"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:hint="Message"
+            android:maxHeight="250dp"
+            android:background="@drawable/round_corner"
+            android:padding="15dp"/>
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/send_btn"
+            android:layout_marginTop="5dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
