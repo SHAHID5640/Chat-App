@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseUser
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var register: Button
     private lateinit var login: Button
-    private var firebaseUser: FirebaseUser?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
@@ -50,17 +49,5 @@ class WelcomeActivity : AppCompatActivity() {
         return networkCapabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
     }
 
-    override fun onStart() {
-        super.onStart()
 
-        firebaseUser = FirebaseAuth.getInstance().currentUser
-
-        if (firebaseUser!=null){
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-            finish()
-
-        }
-
-    }
 }
