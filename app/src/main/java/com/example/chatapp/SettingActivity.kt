@@ -21,7 +21,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 
@@ -33,7 +32,6 @@ class SettingActivity : AppCompatActivity() {
     private lateinit var refusers: DatabaseReference
     private lateinit var userImage:ImageView
     private lateinit var userName:TextView
-    private lateinit var userProfileImageRef:StorageReference
     private lateinit var name:String
     private lateinit var userEmail:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,10 +51,9 @@ class SettingActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.setting_progressBar)
         userEmail = findViewById(R.id.userEmail)
 
-
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
         refusers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUser.uid)
-        userProfileImageRef = FirebaseStorage.getInstance().reference.child("Profile Images")
+
 
         refusers.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -1,10 +1,13 @@
 package com.example.chatapp
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.chatapp.models.Friend
@@ -47,7 +50,7 @@ class FriendListAdapter(private var listener:FriendListClicked,
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+                   Log.d(TAG,error.toString())
                 }
 
             })
@@ -67,11 +70,9 @@ class FriendListAdapter(private var listener:FriendListClicked,
                             val message = mMessage[mMessage.size-1]
                             if (message.from == firebaseUserID){
                                 holder.friendMessage.text = "You : ${message.message}"
-                               // holder.textTime.text = message.time
                             }
                             else{
                                 holder.friendMessage.text = message.message
-                              //  holder.textTime.text = message.time
                             }
                         }
 
@@ -79,7 +80,7 @@ class FriendListAdapter(private var listener:FriendListClicked,
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Log.d(TAG,error.toString())
                 }
 
 

@@ -205,7 +205,6 @@ class ChatingActivity : AppCompatActivity() {
             messageTextBody["message"] = chat
             messageTextBody["type"] = "text"
             messageTextBody["from"] = messageSenderID
-            messageTextBody["time"] = messageTime
             val messageBodyDetail = HashMap<String,Any>()
             messageBodyDetail["$messageSenderRef/$messagePushID"] = messageTextBody
             messageBodyDetail["$messageReceiverRef/$messagePushID"] = messageTextBody
