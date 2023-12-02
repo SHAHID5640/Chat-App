@@ -38,7 +38,7 @@ class ItemMarginDecoration(private val margin: Int) : RecyclerView.ItemDecoratio
 class ChatingActivity : AppCompatActivity() {
     private lateinit var refUser:DatabaseReference
     private lateinit var messageSenderID:String
-    private lateinit var chatingBackBtn:ImageView
+    private lateinit var chattingBackBtn:ImageView
     private lateinit var friendName:TextView
     private lateinit var friendImage:ImageView
     private lateinit var msgRecyclerView: RecyclerView
@@ -56,7 +56,7 @@ class ChatingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chating)
 
 
-        chatingBackBtn = findViewById(R.id.chating_back_btn)
+        chattingBackBtn = findViewById(R.id.chating_back_btn)
         friendImage = findViewById(R.id.friend_profile_image)
         friendName = findViewById(R.id.friend_user_name)
         msgRecyclerView = findViewById(R.id.Message_List)
@@ -84,7 +84,7 @@ class ChatingActivity : AppCompatActivity() {
             }
 
         })
-        chatingBackBtn.setOnClickListener {
+        chattingBackBtn.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }

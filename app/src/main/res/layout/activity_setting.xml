@@ -27,7 +27,18 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"
+        android:src="@drawable/user_image"
         android:layout_marginTop="120dp" />
+    
+    <ImageButton
+        android:id="@+id/camera_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_camera_alt_24"
+        android:background="@drawable/circle"
+        android:layout_marginTop="275dp"
+        android:layout_marginStart="240dp"/>
+
 
 
 

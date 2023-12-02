@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -34,6 +35,7 @@ class SettingActivity : AppCompatActivity() {
     private lateinit var userName:TextView
     private lateinit var name:String
     private lateinit var userEmail:TextView
+    private lateinit var cameraBtn:ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
@@ -50,6 +52,7 @@ class SettingActivity : AppCompatActivity() {
         userName = findViewById(R.id.userName)
         progressBar = findViewById(R.id.setting_progressBar)
         userEmail = findViewById(R.id.userEmail)
+        cameraBtn = findViewById(R.id.camera_btn)
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
         refusers = FirebaseDatabase.getInstance().reference.child("Users").child(firebaseUser.uid)
@@ -74,7 +77,7 @@ class SettingActivity : AppCompatActivity() {
         })
 
 
-        userImage.setOnClickListener {
+        cameraBtn.setOnClickListener {
 
              pickImageFromGallery()
         }
